@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/Admin_Service" />
+    <file type="web" url="file://$PROJECT_DIR$/Admin_Web" />
+    <file type="web" url="file://$PROJECT_DIR$/Category_Service" />
+    <file type="web" url="file://$PROJECT_DIR$/Category_Web" />
+    <file type="web" url="file://$PROJECT_DIR$/Content_Service" />
+    <file type="web" url="file://$PROJECT_DIR$/Content_Web" />
+    <file type="web" url="file://$PROJECT_DIR$/Question_Service" />
+    <file type="web" url="file://$PROJECT_DIR$/Question_Web" />
+    <file type="web" url="file://$PROJECT_DIR$/Search_Service" />
+    <file type="web" url="file://$PROJECT_DIR$/Search_Web" />
+    <file type="web" url="file://$PROJECT_DIR$/User_Service" />
+    <file type="web" url="file://$PROJECT_DIR$/User_Web" />
+    <file type="web" url="file://$PROJECT_DIR$/Vidio_Service" />
+    <file type="web" url="file://$PROJECT_DIR$/Vidio_Web" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/Admin_Interface/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

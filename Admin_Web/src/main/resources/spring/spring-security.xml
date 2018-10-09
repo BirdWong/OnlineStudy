@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+
+        <!--设置不需要权限就可以访问的-->
+        <!--<http pattern="/demo" security="none"></http>-->
+
+        <http pattern="/login/error.do" security="none" ></http>
+        <http pattern="/login/index.do" security="none"></http>
+        <!--<http pattern="" security="none"></http>-->
+        <http use-expressions="false">
+                <intercept-url pattern="/**"  access="ROLE_USER"/>
+
+                <form-login
+                        login-page="/login/index.do"
+                        login-processing-url="/login2"
+                        always-use-default-target="true"
+                        default-target-url="/login/success.do"
+                        authentication-failure-forward-url="/login/error.do"
+                        username-parameter="username"
+                        password-parameter="password"
+
+                />
+                <!--<form-login />-->
+
+                <csrf disabled="true"/>
+                <headers>
+                        <!--页面中有frame框架页，如果没有可以注销-->
+                        <frame-options policy="SAMEORIGIN"/>
+                </headers>
+                <!--默认的地址是      /logout
+                可以通过 logout-url 修改
+                       -->
+                <logout />
+        </http>
+
+
+
+        <authentication-manager>
+                <authentication-provider>
+                        <jdbc-user-service data-source-ref="dataSource"
+                                           users-by-username-query=
+                                                   "select username,password, enabled from admin where username=?"
+                                           authorities-by-username-query=
+                                                   "select username, role from permission where username =?  " />
+                </authentication-provider>
+        </authentication-manager>
+		
+</beans:beans>

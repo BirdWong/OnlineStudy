@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Admin_Interface/Admin_Interface.iml" filepath="$PROJECT_DIR$/Admin_Interface/Admin_Interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Admin_Service/Admin_Service.iml" filepath="$PROJECT_DIR$/Admin_Service/Admin_Service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Admin_Web/Admin_Web.iml" filepath="$PROJECT_DIR$/Admin_Web/Admin_Web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Category_Interface/Category_Interface.iml" filepath="$PROJECT_DIR$/Category_Interface/Category_Interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Category_Service/Category_Service.iml" filepath="$PROJECT_DIR$/Category_Service/Category_Service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Category_Web/Category_Web.iml" filepath="$PROJECT_DIR$/Category_Web/Category_Web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Common/Common.iml" filepath="$PROJECT_DIR$/Common/Common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Content_Interface/Content_Interface.iml" filepath="$PROJECT_DIR$/Content_Interface/Content_Interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Content_Service/Content_Service.iml" filepath="$PROJECT_DIR$/Content_Service/Content_Service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Content_Web/Content_Web.iml" filepath="$PROJECT_DIR$/Content_Web/Content_Web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Dao/Dao.iml" filepath="$PROJECT_DIR$/Dao/Dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OnlineStudy.iml" filepath="$PROJECT_DIR$/OnlineStudy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Pojo/Pojo.iml" filepath="$PROJECT_DIR$/Pojo/Pojo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Question_Interface/Question_Interface.iml" filepath="$PROJECT_DIR$/Question_Interface/Question_Interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Question_Service/Question_Service.iml" filepath="$PROJECT_DIR$/Question_Service/Question_Service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Question_Web/Question_Web.iml" filepath="$PROJECT_DIR$/Question_Web/Question_Web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Search_Interface/Search_Interface.iml" filepath="$PROJECT_DIR$/Search_Interface/Search_Interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Search_Service/Search_Service.iml" filepath="$PROJECT_DIR$/Search_Service/Search_Service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Search_Web/Search_Web.iml" filepath="$PROJECT_DIR$/Search_Web/Search_Web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/User_Interface/User_Interface.iml" filepath="$PROJECT_DIR$/User_Interface/User_Interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/User_Service/User_Service.iml" filepath="$PROJECT_DIR$/User_Service/User_Service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/User_Web/User_Web.iml" filepath="$PROJECT_DIR$/User_Web/User_Web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Vidio_Interface/Vidio_Interface.iml" filepath="$PROJECT_DIR$/Vidio_Interface/Vidio_Interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Vidio_Service/Vidio_Service.iml" filepath="$PROJECT_DIR$/Vidio_Service/Vidio_Service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Vidio_Web/Vidio_Web.iml" filepath="$PROJECT_DIR$/Vidio_Web/Vidio_Web.iml" />
+    </modules>
+  </component>
+</project>

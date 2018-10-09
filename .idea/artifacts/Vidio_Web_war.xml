@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Vidio_Web:war">
+    <output-path>$PROJECT_DIR$/Vidio_Web/target</output-path>
+    <root id="archive" name="Vidio_Web-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="Vidio_Web:war exploded" />
+    </root>
+  </artifact>
+</component>

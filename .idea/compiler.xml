@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Admin_Interface" />
+        <module name="Admin_Service" />
+        <module name="Admin_Web" />
+        <module name="Category_Interface" />
+        <module name="Category_Service" />
+        <module name="Category_Web" />
+        <module name="Common" />
+        <module name="common" />
+        <module name="Content_Interface" />
+        <module name="Content_Service" />
+        <module name="Content_Web" />
+        <module name="Dao" />
+        <module name="Pojo" />
+        <module name="Question_Interface" />
+        <module name="Question_Service" />
+        <module name="Question_Web" />
+        <module name="Search_Interface" />
+        <module name="Search_Service" />
+        <module name="Search_Web" />
+        <module name="User_Interface" />
+        <module name="User_Service" />
+        <module name="User_Web" />
+        <module name="Vidio_Interface" />
+        <module name="Vidio_Service" />
+        <module name="Vidio_Web" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Admin_Interface" target="1.8" />
+      <module name="Admin_Service" target="1.8" />
+      <module name="Admin_Web" target="1.8" />
+      <module name="Category_Interface" target="1.8" />
+      <module name="Category_Service" target="1.8" />
+      <module name="Category_Web" target="1.8" />
+      <module name="common" target="1.8" />
+      <module name="Common" target="1.8" />
+      <module name="Content_Interface" target="1.8" />
+      <module name="Content_Service" target="1.8" />
+      <module name="Content_Web" target="1.8" />
+      <module name="Dao" target="1.8" />
+      <module name="OnlineStudy" target="1.8" />
+      <module name="Pojo" target="1.8" />
+      <module name="Question_Interface" target="1.8" />
+      <module name="Question_Service" target="1.8" />
+      <module name="Question_Web" target="1.8" />
+      <module name="Search_Interface" target="1.8" />
+      <module name="Search_Service" target="1.8" />
+      <module name="Search_Web" target="1.8" />
+      <module name="User_Interface" target="1.8" />
+      <module name="User_Service" target="1.8" />
+      <module name="User_Web" target="1.8" />
+      <module name="Vidio_Interface" target="1.8" />
+      <module name="Vidio_Service" target="1.8" />
+      <module name="Vidio_Web" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="onlinestudy@119.29.56.187">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.8">
+    <root id="1"/>
+    <schema id="2" parent="1" name="onlinestudy">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="mysql"/>
+    <schema id="5" parent="1" name="performance_schema"/>
+    <schema id="6" parent="1" name="pinyougoudb"/>
+    <schema id="7" parent="1" name="sys"/>
+    <table id="8" parent="2" name="admin"/>
+    <table id="9" parent="2" name="barrage"/>
+    <table id="10" parent="2" name="category"/>
+    <table id="11" parent="2" name="choice"/>
+    <table id="12" parent="2" name="commentary"/>
+    <table id="13" parent="2" name="content"/>
+    <table id="14" parent="2" name="course"/>
+    <table id="15" parent="2" name="kind"/>
+    <table id="16" parent="2" name="message"/>
+    <table id="17" parent="2" name="paper"/>
+    <table id="18" parent="2" name="permission"/>
+    <table id="19" parent="2" name="personal"/>
+    <table id="20" parent="2" name="question"/>
+    <table id="21" parent="2" name="upq"/>
+    <table id="22" parent="2" name="user"/>
+    <table id="23" parent="2" name="vidio"/>
+    <column id="24" parent="8" name="username">
+      <Position>1</Position>
+      <Comment>admin账户</Comment>
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="25" parent="8" name="password">
+      <Position>2</Position>
+      <Comment>管理员密码</Comment>
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="26" parent="8" name="enabled">
+      <Position>3</Position>
+      <Comment>是否可以使用</Comment>
+      <DataType>tinyint(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;1&apos;</DefaultExpression>
+    </column>
+    <index id="27" parent="8" name="username">
+      <ColNames>username</ColNames>
+    </index>
+    <key id="28" parent="8" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>username</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="29" parent="9" name="id">
+      <Position>1</Position>
+      <Comment>弹幕id</Comment>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="30" parent="9" name="btext">
+      <Position>2</Position>
+      <Comment>弹幕内容</Comment>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="31" parent="9" name="btime">
+      <Position>3</Position>
+      <Comment>弹幕时间</Comment>
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="32" parent="9" name="uid">
+      <Position>4</Position>
+      <Comment>发送弹幕的用户id</Comment>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="33" parent="9" name="vid">
+      <Position>5</Position>
+      <Comment>弹幕属于的视频id</Comment>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="34" parent="9" name="uid">
+      <ColNames>uid</ColNames>
+    </index>
+    <index id="35" parent="9" name="vid">
+      <ColNames>vid</ColNames>
+    </index>
+    <key id="36" parent="9" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="37" parent="9" name="barrage_ibfk_1">
+      <ColNames>uid</ColNames>
+      <RefSchemaName>onlinestudy</RefSchemaName>
+      <RefTableName>user</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="38" parent="9" name="barrage_ibfk_2">
+      <ColNames>vid</ColNames>
+      <RefSchemaName>onlinestudy</RefSchemaName>
+      <RefTableName>vidio</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="39" parent="10" name="id">
+      <Position>1</Position>
+      <Comment>课程目录id</Comment>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="40" parent="10" name="cname">
+      <Position>2</Position>
+      <Comment>课程目录名</Comment>
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="41" parent="10" name="cid">
+      <Position>3</Position>
+      <Comment>课程id</Comment>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="42" parent="10" name="cid">
+      <ColNames>cid</ColNames>
+    </index>
+    <index id="43" parent="10" name="c_id">
+      <ColNames>id
+cid</ColNames>
+    </index>
+    <key id="44" parent="10" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="45" parent="10" name="category_ibfk_1">
+      <ColNames>cid</ColNames>
+      <RefSchemaName>onlinestudy</RefSchemaName>
+      <RefTableName>course</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="46" parent="11" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="47" parent="11" name="sequence">
+      <Position>2</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="48" parent="11" name="description">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="49" parent="11" name="qid">
+      <Position>4</Position>
+      <DataType>int(11)|0s</DataType>
+    </column>
+    <index id="50" parent="11" name="qid">
+      <ColNames>qid</ColNames>
+    </index>
+    <column id="51" parent="12" name="id">
+      <Position>1</Position>
+      <Comment>课程评价id</Comment>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="52" parent="12" name="ctext">
+      <Position>2</Position>
+      <Comment>课程评价内容</Comment>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="53" parent="12" name="ctime">
+      <Position>3</Position>
+      <Comment>评价时间</Comment>
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="54" parent="12" name="cid">
+      <Position>4</Position>
+      <Comment>课程id</Comment>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="55" parent="12" name="uid">
+      <Position>5</Position>
+      <Comment>评价用户id</Comment>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="56" parent="12" name="cid">
+      <ColNames>cid</ColNames>
+    </index>
+    <index id="57" parent="12" name="uid">
+      <ColNames>uid</ColNames>
+    </index>
+    <key id="58" parent="12" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="59" parent="12" name="commentary_ibfk_1">
+      <ColNames>cid</ColNames>
+      <RefSchemaName>onlinestudy</RefSchemaName>
+      <RefTableName>course</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="60" parent="12" name="commentary_ibfk_2">
+      <ColNames>uid</ColNames>
+      <RefSchemaName>onlinestudy</RefSchemaName>
+      <RefTableName>user</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="61" parent="13" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="62" parent="13" name="url">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="63" parent="13" name="cid">
+      <Position>3</Position>
+      <Comment>课程的id</Comment>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="64" parent="13" name="cid">
+      <ColNames>cid</ColNames>
+    </index>
+    <key id="65" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="66" parent="13" name="content_ibfk_1">
+      <ColNames>cid</ColNames>
+      <RefSchemaName>onlinestudy</RefSchemaName>
+      <RefTableName>course</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="67" parent="14" name="id">
+      <Position>1</Position>
+      <Comment>课程id</Comment>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="68" parent="14" name="cname">
+      <Position>2</Position>
+      <Comment>课程名字</Comment>
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="69" parent="14" name="curl">
+      <Position>3</Position>
+      <Comment>课程图片</Comment>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="70" parent="14" name="cdescription">
+      <Position>4</Position>
+      <Comment>课程描述</Comment>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="71" parent="14" name="uid">
+      <Position>5</Position>
+      <Comment>用户id</Comment>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="72" parent="14" name="kid">
+      <Position>6</Position>
+      <Comment>分类</Comment>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="73" parent="14" name="kid">
+      <ColNames>kid</ColNames>
+    </index>
+    <index id="74" parent="14" name="uid">
+      <ColNames>uid</ColNames>
+    </index>
+    <key id="75" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="76" parent="14" name="course_ibfk_1">
+      <ColNames>uid</ColNames>
+      <RefSchemaName>onlinestudy</RefSchemaName>
+      <RefTableName>user</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="77" parent="14" name="course_ibfk_2">
+      <ColNames>kid</ColNames>
+      <RefSchemaName>onlinestudy</RefSchemaName>
+      <RefTableName>kind</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="78" parent="15" name="id">
+      <Position>1</Position>
+      <Comment>分类的id</Comment>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="79" parent="15" name="kname">
+      <Position>2</Position>
+      <Comment>分类的名称</Comment>
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="80" parent="15" name="kdescription">
+      <Position>3</Position>
+      <Comment>分类的描述</Comment>
+      <DataType>varchar(255)|0s</DataType>
+    </column>
+    <key id="81" parent="15" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="82" parent="16" name="id">
+      <Position>1</Position>
+      <Comment>消息通知id</Comment>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="83" parent="16" name="mtext">
+      <Position>2</Position>
+      <Comment>消息通知内容</Comment>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="84" parent="16" name="getid">
+      <Position>3</Position>
+      <Comment>接收用户</Comment>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="85" parent="16" name="sendid">
+      <Position>4</Position>
+      <Comment>发送用户</Comment>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="86" parent="16" name="getid">
+      <ColNames>getid</ColNames>
+    </index>
+    <index id="87" parent="16" name="sendid">
+      <ColNames>sendid</ColNames>
+    </index>
+    <key id="88" parent="16" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="89" parent="16" name="message_ibfk_1">
+      <ColNames>getid</ColNames>
+      <RefSchemaName>onlinestudy</RefSchemaName>
+      <RefTableName>user</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="90" parent="16" name="message_ibfk_2">
+      <ColNames>sendid</ColNames>
+      <RefSchemaName>onlinestudy</RefSchemaName>
+      <RefTableName>user</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="91" parent="17" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="92" parent="17" name="name">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="93" parent="17" name="createtime">
+      <Position>3</Position>
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="94" parent="17" name="score">
+      <Position>4</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="95" parent="17" name="uid">
+      <Position>5</Position>
+      <DataType>int(11)|0s</DataType>
+    </column>
+    <column id="96" parent="17" name="kid">
+      <Position>6</Position>
+      <DataType>int(11)|0s</DataType>
+    </column>
+    <index id="97" parent="17" name="kid">
+      <ColNames>kid</ColNames>
+    </index>
+    <index id="98" parent="17" name="uid">
+      <ColNames>uid</ColNames>
+    </index>
+    <column id="99" parent="18" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="100" parent="18" name="username">
+      <Position>2</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="101" parent="18" name="role">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+    </column>
+    <key id="102" parent="18" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="103" parent="19" name="id">
+      <Position>1</Position>
+      <Comment>个人信息id</Comment>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="104" parent="19" name="pname">
+      <Position>2</Position>
+      <Comment>用户名</Comment>
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="105" parent="19" name="purl">
+      <Position>3</Position>
+      <Comment>头像链接</Comment>
+      <DataType>varchar(255)|0s</DataType>
+    </column>
+    <column id="106" parent="19" name="psex">
+      <Position>4</Position>
+      <Comment>用户性别</Comment>
+      <DataType>enum(&apos;man&apos;, &apos;woman&apos;, &apos;none&apos;)|0e</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="107" parent="19" name="paddress">
+      <Position>5</Position>
+      <Comment>用户地址</Comment>
+      <DataType>varchar(255)|0s</DataType>
+    </column>
+    <column id="108" parent="19" name="pschool">
+      <Position>6</Position>
+      <Comment>用户学校</Comment>
+      <DataType>varchar(255)|0s</DataType>
+    </column>
+    <column id="109" parent="19" name="pcompany">
+      <Position>7</Position>
+      <Comment>用户公司</Comment>
+      <DataType>varchar(255)|0s</DataType>
+    </column>
+    <column id="110" parent="19" name="ppath">
+      <Position>8</Position>
+      <Comment>主要方向</Comment>
+      <DataType>enum(&apos;java&apos;, &apos;python&apos;, &apos;html/css&apos;, &apos;ios&apos;, &apos;android&apos;, &apos;deepLearning&apos;)|0e</DataType>
+    </column>
+    <column id="111" parent="19" name="uid">
+      <Position>9</Position>
+      <Comment>账户id</Comment>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="112" parent="19" name="uid">
+      <ColNames>uid</ColNames>
+    </index>
+    <key id="113" parent="19" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="114" parent="19" name="personal_ibfk_1">
+      <ColNames>uid</ColNames>
+      <RefSchemaName>onlinestudy</RefSchemaName>
+      <RefTableName>user</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="115" parent="20" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="116" parent="20" name="createdata">
+      <Position>2</Position>
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="117" parent="20" name="score">
+      <Position>3</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="118" parent="20" name="purl">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+    </column>
+    <column id="119" parent="20" name="aswer">
+      <Position>5</Position>
+      <DataType>char(26)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="120" parent="20" name="description">
+      <Position>6</Position>
+      <DataType>varchar(255)|0s</DataType>
+    </column>
+    <column id="121" parent="20" name="uid">
+      <Position>7</Position>
+      <DataType>int(11)|0s</DataType>
+    </column>
+    <column id="122" parent="20" name="kid">
+      <Position>8</Position>
+      <DataType>int(11)|0s</DataType>
+    </column>
+    <index id="123" parent="20" name="question_kind_id_fk">
+      <ColNames>kid</ColNames>
+    </index>
+    <index id="124" parent="20" name="question_user_id_fk">
+      <ColNames>uid</ColNames>
+    </index>
+    <column id="125" parent="21" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="126" parent="21" name="uid">
+      <Position>2</Position>
+      <DataType>int(11)|0s</DataType>
+    </column>
+    <column id="127" parent="21" name="pid">
+      <Position>3</Position>
+      <DataType>int(11)|0s</DataType>
+    </column>
+    <column id="128" parent="21" name="qid">
+      <Position>4</Position>
+      <DataType>int(11)|0s</DataType>
+    </column>
+    <index id="129" parent="21" name="pid">
+      <ColNames>pid</ColNames>
+    </index>
+    <index id="130" parent="21" name="qid">
+      <ColNames>qid</ColNames>
+    </index>
+    <index id="131" parent="21" name="uid">
+      <ColNames>uid</ColNames>
+    </index>
+    <column id="132" parent="22" name="id">
+      <Position>1</Position>
+      <Comment>用户id</Comment>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="133" parent="22" name="userpassword">
+      <Position>2</Position>
+      <Comment>用户密码</Comment>
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="134" parent="22" name="useremail">
+      <Position>3</Position>
+      <Comment>用户邮箱</Comment>
+      <DataType>varchar(255)|0s</DataType>
+    </column>
+    <column id="135" parent="22" name="userphone">
+      <Position>4</Position>
+      <Comment>用户电话</Comment>
+      <DataType>varchar(20)|0s</DataType>
+    </column>
+    <column id="136" parent="22" name="userstatus">
+      <Position>5</Position>
+      <Comment>用户状态</Comment>
+      <DataType>int(2)|0s</DataType>
+    </column>
+    <key id="137" parent="22" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="138" parent="23" name="id">
+      <Position>1</Position>
+      <Comment>视频id</Comment>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="139" parent="23" name="vname">
+      <Position>2</Position>
+      <Comment>视频名字</Comment>
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="140" parent="23" name="vtext">
+      <Position>3</Position>
+      <Comment>视频讲义</Comment>
+      <DataType>varchar(255)|0s</DataType>
+    </column>
+    <column id="141" parent="23" name="vurl">
+      <Position>4</Position>
+      <Comment>视频地址</Comment>
+      <DataType>varchar(255)|0s</DataType>
+    </column>
+    <column id="142" parent="23" name="cid">
+      <Position>5</Position>
+      <Comment>所属目录id</Comment>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="143" parent="23" name="cid">
+      <ColNames>cid</ColNames>
+    </index>
+    <key id="144" parent="23" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="145" parent="23" name="vidio_ibfk_1">
+      <ColNames>cid</ColNames>
+      <RefSchemaName>onlinestudy</RefSchemaName>
+      <RefTableName>category</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>

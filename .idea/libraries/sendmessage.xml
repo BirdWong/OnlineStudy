@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="sendmessage">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../sendmessage.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
